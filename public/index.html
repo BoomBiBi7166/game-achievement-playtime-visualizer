@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1016">
+  <title>PlayScape</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=street-scene-3">
+  <link rel="stylesheet" href="styles/sidebar.css">
+  <link rel="stylesheet" href="styles/dashboard.css?v=building-skins-4">
+  <link rel="stylesheet" href="styles/library.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="SteamCity home"><span class="brand-mark"><i></i><i></i><i></i></span><span>Play<span class="brand-accent">Scape</span></span></a>
+      <div class="side-label">PLAYSCAPE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item active" href="#city"><span class="nav-icon">▦</span> My city</a>
+        <a class="nav-item" href="#settings"><span class="nav-icon">⚙</span> Settings</a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="profile-button"><span class="avatar" id="profileAvatar">S</span><span><strong id="profileName">Not connected</strong><small>Steam profile</small></span><button class="switch-account" id="switchAccount" type="button" aria-label="Switch Steam account" title="Switch Steam account" hidden>Switch</button></div>
+    </aside>
+
+    <main class="main-content" id="city">
+      <header class="topbar"><div class="breadcrumb">PlayScape <span>/</span> <strong>My city</strong></div></header>
+      <section class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-line"></span> YOUR CITY</div><h1>Game stats<br><span>visualizer.</span></h1><p class="welcome-copy">A city shaped by the way you play. Every building tells a story.</p></div><button class="connect-button" id="connectButton"><span class="steam-symbol">◉</span><span id="connectLabel">Connect Steam</span><span class="button-arrow">↗</span></button></section>
+
+      <section class="dashboard-grid">
+        <div class="city-panel panel">
+          <div class="panel-heading"><div><h2 id="cityOwner">Your city</h2><p class="subheading" id="cityDescription">Connect Steam to load your game data</p></div></div>
+          <div class="city-toolbar"><div class="mode-switch" role="group" aria-label="Building height mode"><button class="mode-button selected" data-mode="achievements">Achievements</button><button class="mode-button" data-mode="playtime">Playtime</button></div><div class="city-legend"><span class="legend-dot"></span><span id="modeLegend">Completion</span></div></div>
+          <div class="city-stage"><div class="sky-glow"></div><div class="stars"></div><svg class="city-scene" id="cityGrid" viewBox="0 0 760 440" role="img" aria-label="Rotatable isometric city of nine game buildings" preserveAspectRatio="xMidYMid meet"></svg><div class="stage-caption"><span class="live-dot"></span> CITY VIEW <span class="caption-divider">/</span> 3 × 3 DISTRICT <span class="caption-divider">/</span> DRAG TO ROTATE</div><div class="stage-tools"><button id="rotateLeft" aria-label="Rotate city left">↶</button><span id="rotationLabel">0°</span><button id="rotateRight" aria-label="Rotate city right">↷</button><button id="resetRotation" aria-label="Reset city rotation">⟳</button></div></div>
+          <div class="city-footer"><span><b id="gameTotal">0</b> buildings <span class="footer-divider">·</span> <span id="lastSync">Not synced</span></span><button class="text-button" id="editCity">Edit city <span>↗</span></button></div>
+        </div>
+
+        <aside class="insights-column" id="insights"><div class="stat-card panel"><div class="stat-top"><span class="stat-icon violet">◈</span><span class="stat-label">TOTAL PLAYTIME</span></div><div class="stat-number"><span id="totalHours">2,846</span><small>hrs</small></div><div class="stat-foot">Across <b id="statGames">9</b> games</div><div class="mini-bars" aria-hidden="true"><i style="height:36%"></i><i style="height:58%"></i><i style="height:45%"></i><i style="height:76%"></i><i style="height:50%"></i><i style="height:90%"></i><i style="height:68%"></i><i style="height:100%"></i><i style="height:78%"></i><i style="height:94%"></i><i style="height:71%"></i><i style="height:100%"></i></div></div>
+          <div class="stat-card panel"><div class="stat-top"><span class="stat-icon mint">✳</span><span class="stat-label">ACHIEVEMENTS</span></div><div class="stat-number"><span id="achievementRate">68</span><small>%</small></div><div class="progress-track"><span id="achievementProgress"></span></div><div class="stat-foot"><b id="unlockedCount">462</b> unlocked <span class="footer-divider">·</span> <span id="achievementCount">682</span> total</div></div>
+          <div class="tip-card"><span class="tip-spark">✦</span><div><strong>Your city is growing</strong><p>Play more, unlock more, watch your skyline rise.</p></div><span class="tip-arrow">↗</span></div>
+        </aside>
+      </section>
+
+      <section class="library-section" id="library"><div class="library-heading"><div><h2>Library overview</h2><p class="subheading" id="librarySummary">Your most-played games at a glance</p></div><div class="library-controls"><label class="search-box"><span>⌕</span><input id="gameSearch" type="search" placeholder="Find a game..."></label><button class="filter-button" id="sortButton">↕ <span>Most played</span></button></div></div><div class="game-list" id="gameList"></div><div class="library-pagination"><button class="load-more-button" id="loadMoreGames" type="button" hidden>Show more</button><button class="load-more-button" id="showLessGames" type="button" hidden>Show less</button></div></section>
+      <footer class="page-footer"><span>PLAYSCAPE <span class="footer-divider">·</span> BUILT FROM YOUR GAME STATS</span><span>YOUR CITY, YOUR STORY <span class="footer-divider">✳</span></span></footer>
+    </main>
+    <main class="main-content settings-page" id="settingsPage" hidden>
+      <header class="topbar"><div class="breadcrumb">PlayScape <span>/</span> <strong>Settings</strong></div></header>
+      <section class="settings-section">
+        <div class="settings-heading"><div class="eyebrow"><span class="eyebrow-line"></span> PERSONALIZE</div><h1>Settings</h1><p class="welcome-copy">Make the city feel like yours.</p></div>
+        <article class="setting-card">
+          <div><h2>Appearance</h2><p class="subheading">Choose the theme for your city.</p></div>
+          <div class="theme-options" role="group" aria-label="Color theme">
+            <button class="theme-option selected" type="button" aria-pressed="true" data-theme-choice="dark"><span aria-hidden="true">◐</span> Dark</button>
+            <button class="theme-option" type="button" aria-pressed="false" data-theme-choice="light"><span aria-hidden="true">☼</span> Light</button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+  <dialog id="buildingDialog" class="game-dialog"><form id="buildingEditorForm" method="dialog"><button class="dialog-close" id="closeBuildingDialog" type="button" aria-label="Close">×</button><div class="eyebrow"><span class="eyebrow-line"></span> CITY BUILDING</div><h2 id="buildingDialogTitle">Edit building</h2><p class="subheading">Choose a game, building skin, and color.</p><div class="editor-field game-picker"><label for="buildingGameSearch">Game</label><input id="buildingGameSearch" type="search" role="combobox" aria-autocomplete="list" aria-controls="buildingGameChoices" aria-expanded="false" placeholder="Search your Steam library..." autocomplete="off"><input id="buildingGameId" type="hidden"><div class="game-search-results" id="buildingGameChoices" role="listbox" aria-label="Matching Steam games" hidden></div></div><label class="editor-field" for="buildingSkin">Building skin<select id="buildingSkin" name="skin"><option value="classic">Classic</option><option value="burj-khalifa">Burj Khalifa</option><option value="mahanakhon">Mahanakhon</option><option value="pisa">Pisa</option></select></label><label class="editor-field">Building color<div class="color-picker-row"><input id="buildingColor" type="color" value="#8ce0bd"><div class="color-swatches" id="colorSwatches" aria-label="Suggested colors"></div></div></label><div class="editor-actions"><button class="dialog-remove" id="removeBuilding" type="button" hidden>Remove</button><button class="dialog-save" id="saveBuilding" type="submit" value="save">Save changes</button></div></form></dialog>
+  <script src="components/building.js?v=pisa-skin-3"></script>
+  <script src="script.js?v=logout-button-1"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+.sidebar{width:232px;position:fixed;inset:0 auto 0 0;background:#0e1218;border-right:1px solid #202630;padding:28px 17px 17px;display:flex;flex-direction:column;z-index:2}
+.brand{display:flex;align-items:center;gap:10px;margin:1px 0 54px 6px;text-decoration:none;color:#f6f7fa;font:700 19px var(--display);letter-spacing:-.8px}
+.brand-accent{color:var(--mint)}
+.brand-mark{width:25px;height:25px;display:flex;align-items:end;gap:3px;transform:skewY(-25deg)}
+.brand-mark i{display:block;width:6px;border-radius:2px;background:var(--mint);box-shadow:0 0 12px #8ce0bd44}
+.brand-mark i:nth-child(1){height:12px}
+.brand-mark i:nth-child(2){height:19px}
+.brand-mark i:nth-child(3){height:15px}
+.side-label,.eyebrow{font-size:9px;letter-spacing:1.55px;color:#727d8b;font-weight:700}
+.side-label{padding-left:10px;margin-bottom:12px}
+.side-nav{display:grid;gap:5px}
+.nav-item{height:42px;display:flex;align-items:center;gap:11px;border-radius:7px;padding:0 11px;color:#9da5b2;text-decoration:none;font-size:12px;font-weight:500}
+.nav-item:hover,.nav-item.active{background:#1a232b;color:#dff7ed}
+.nav-item.active{box-shadow:inset 2px 0 #8ce0bd}
+.nav-icon{width:16px;text-align:center;font-size:16px;color:#8993a2}
+.active .nav-icon{color:var(--mint)}
+.nav-count{margin-left:auto;background:#222b35;color:#aeb7c4;border-radius:5px;padding:3px 6px;font-size:10px}
+.sidebar-spacer{flex:1}
+.profile-button strong{display:block;font-size:11px;font-weight:600}
+.profile-button small{display:block;color:#818b99;font-size:10px;margin-top:3px}
+.profile-button{width:100%;border:0;border-top:1px solid #242a33;background:none;padding:14px 4px 0;display:flex;align-items:center;text-align:left;gap:9px}
+.avatar{width:29px;height:29px;border-radius:8px;background:#604f9b;color:#eee4ff;display:grid;place-items:center;font-weight:700;font-size:12px}
+.switch-account[hidden]{display:none}
+
+.switch-account{margin-left:auto;flex:none;border:1px solid #35414a;border-radius:4px;background:#182127;color:#9be1bf;padding:4px 6px;font-size:8px}
