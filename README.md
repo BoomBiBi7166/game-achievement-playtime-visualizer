@@ -1,5 +1,9 @@
 # PlayScape
 
+**[Live demo](https://playscape-game-visualizer.onrender.com/)**
+
+![PlayScape](docs/example.png)
+
 PlayScape turns a player's library into a small, rotatable isometric city. Buildings represent games and rise according to achievement completion or playtime. The dashboard also shows library statistics and lets players choose which games appear in the city, along with each building's color and style.
 
 PlayScape uses Steam OpenID for sign-in and the Steam Web API for profile and game data. Steam handles the user's password; the app does not receive or store it. The project does not require a database.
