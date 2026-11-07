@@ -1,6 +1,6 @@
 # PlayScape
 
-**[Live demo](https://playscape-game-visualizer.onrender.com/)**
+**[Click here to try](https://playscape-game-visualizer.onrender.com/)**
 
 ![PlayScape](docs/example.png)
 
